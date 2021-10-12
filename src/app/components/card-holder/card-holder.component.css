@@ -1,0 +1,23 @@
+.card {
+  border-radius: 5px;
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+  min-width: 200px;
+  min-height: 260px;
+}
+
+.back {
+  transform: rotateY(0deg);
+}
+
+.front {
+  transform: rotateY(180deg);
+}
+
+.face {
+  position: absolute;
+  backface-visibility: hidden;
+  text-align: center;
+}

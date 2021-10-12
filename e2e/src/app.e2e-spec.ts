@@ -1,4 +1,4 @@
-import { browser, logging } from 'protractor';
+import { browser, logging, $$} from 'protractor';
 import { AppPage } from './app.po';
 
 describe('workspace-project App', () => {
@@ -8,9 +8,10 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', async () => {
+  it('should display header text', async () => {
+    const headerText = $$('.navbar .container-fluid a').first();
     await page.navigateTo();
-    expect(await page.getTitleText()).toEqual('memory-game app is running!');
+    expect(await headerText.getText()).toEqual('Memory Game');
   });
 
   afterEach(async () => {

@@ -1,0 +1,21 @@
+ <app-loading ></app-loading>
+ <div class="row">
+    <div class="col gy-3">
+      <button type="button" class="btn btn-primary btn-lg" [disabled]="selectedPlayer === player2">Player 1 (Score : <span class="badge bg-secondary">{{player1Points}}</span>)</button>
+    </div>
+     <div class="col gy-3 d-md-flex justify-content-md-end">
+       <button type="button" class="btn btn-primary btn-lg" [disabled]="selectedPlayer === player1">Player 2 (Score: <span class="badge bg-secondary">{{player2Points}}</span>)</button>
+      </div>
+ </div>
+  <div class="row">
+    <div class="col gy-3 gx-2" *ngFor="let card of allCards; let i=index">
+      <div (click) = "cardClicked(i)" class="card" [@flipCard]="card.state">
+      <div class="face back" *ngIf = "card.state === 'default'">
+        <img src="../../../assets/card-back.jpeg" width="220" height="260">
+      </div>
+      <div *ngIf = "card.state === 'flipped'" class="face front">
+        <img src="{{CardFaceUrl}}/{{card.id}}/200/250">
+      </div>
+      </div>
+  </div>
+</div>
