@@ -149,6 +149,7 @@ export class CardHolderComponent implements OnInit, OnDestroy {
    */
   cardClicked(indx: any): void {
     const selectedCard = this.allCards[indx] ;
+    if( this.flippedCardIds.has(selectedCard.id) ) { return; }
     if (selectedCard.state === STATE.default && this.selectedCards.length < 2) {
       this.selectedCards.push(selectedCard);
       selectedCard.state = STATE.flipped;
