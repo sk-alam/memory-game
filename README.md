@@ -1,6 +1,7 @@
 # MemoryGame
 
-Clone or download the app. Goto the local project root directory and run `npm i` from command line
+Clone or download the app into your local directory.
+Goto your local memory-game root directory and run `npm i` from command line
 
 ## Development server
 
